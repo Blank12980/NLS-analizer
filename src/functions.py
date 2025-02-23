@@ -1,26 +1,17 @@
 import pandas as pd
 import pickle
-import tensorflow as tf
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, Conv1D, MaxPooling1D, GlobalMaxPooling1D, Dense, Dropout,LSTM,Flatten, Input,GRU,Bidirectional
+from tensorflow.keras.layers import Embedding, Conv1D, MaxPooling1D, GlobalMaxPooling1D, Dense, Dropout
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
-from keras.utils import to_categorical
-import numpy as np
-import string
 import nltk
 import re
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from nltk.tokenize import word_tokenize
-from collections import Counter
 nltk.download('stopwords')
 nltk.download('wordnet')
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.metrics import accuracy_score,classification_report,confusion_matrix
 # work with data
 with open('./src/dataset.txt','r',encoding='utf-8') as file:
     text = file.readlines() # Определяем стоп-слова
